@@ -1,0 +1,91 @@
+html, body {
+	height: 100%;
+	
+} 
+
+body {
+	padding-top: 60px;
+}
+
+.huge {
+	font-size: 42px;
+}
+
+.tag-boxes .panel-primary {
+	border: 1px solid #044A8F;
+}
+
+.tag-boxes .panel-red {
+	color: white;
+	background: #d9534f;
+}
+
+.tag-boxes .panel-red a {
+	color: #d9534f;
+}
+
+.tag-boxes .panel-red a:hover {
+	color: red;
+} 
+
+.tag-boxes .panel-yellow {
+	color: white;
+	background: #f0ad4e;
+}
+
+.tag-boxes .panel-yellow a {
+	color: #f0ad4e;
+}
+
+.tag-boxes .panel-yellow a:hover {
+	color: darkorange;
+} 
+
+.tag-boxes .panel-green{
+	color: white;
+	background: greenyellow;
+}
+
+.tag-boxes .panel-green a {
+	color: greenyellow;
+}
+
+.tag-boxes .panel-green a:hover {
+	color: darkgreen;
+}
+
+#wrapper {
+	min-height: 100%;
+	position: relative;
+}
+
+.body-section {
+	padding-bottom: 70px;
+}
+
+footer {
+	background-color: #033c73;
+	background-image: linear-gradient(#04519b, #044687 60%, #033769);
+	color: white;
+	height: 50px;
+	line-height: 50px;
+	font-size: 12px;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+footer a {
+	color: darkmagenta;
+	font-weight: bold;
+}
+
+footer a:hover {
+	color: white;
+	text-decoration: none;
+}
+
+
+
+
+linear-gradient(#045099,#022a50);

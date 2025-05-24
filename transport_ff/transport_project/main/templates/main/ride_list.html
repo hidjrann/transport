@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}
+Riding List
+{% endblock %}
+{% block content %}
+    <h2 class="text-center">Ride List</h2>
+    <a href="{% url 'ride_new' %}" class="btn btn-success ml-2 mb-4">New Ride</a>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Origin</th>
+      <th scope="col">Destination</th>
+      <th scope="col">Distance</th>
+      <th scope="col">Cost</th>
+      <th scope="col">Approved</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for ride in object_list %}
+    <tr>
+      <td>{{ ride.customer_name }}</td>
+      <td>{{ ride.origin }}</td>
+      <td>{{ ride.destination }}</td>
+      <td>{{ ride.distance }} km</td>
+      <td>{{ ride.cost }}manat</td>
+      <td>{% if ride.approved is not True %}
+          Pending
+      {% endif %}
+
+      </td>
+      <td>
+          <a href="{% url 'ride_delete' ride.pk %}" class="btn btn-info m-1">Delete</a>
+          <a href="{% url 'ride_edit' ride.pk %}" class="btn btn-info m-1">Update</a>
+          <a href="#" class="btn btn-info m-1">Pdf</a>
+      </td>
+
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}
+profile
+{% endblock %}
+{% block content %}
+    <div class="card text-center">
+        <div class="card-header">
+            Profile {{ user.first_name }}
+        </div>
+        <div class="card-body">
+
+            <p class="card-text">
+                Username: {{ user }} <br>
+                First Name: {{ user.first_name }} <br>
+                Last Name: {{ user.last_name }}<br>
+                Email: {{ user.email }}<br>
+                Contact No: {{ user.profile.contact_no }}<br>
+                Address: {{ user.profile.address }}
+            </p>
+
+        </div>
+        <div class="card-footer text-muted">
+            <a href="{% url 'profile-edit' %}" class="btn btn-primary">Edit Profile</a>
+        </div>
+    </div>
+
+{% endblock %}

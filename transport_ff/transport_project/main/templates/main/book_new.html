@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+New booking
+{% endblock %}
+
+{% block content %}
+<h1> New Booking</h1>
+    <form action="" method="post">
+    {% csrf_token %}
+    {{ form | crispy }}
+    <button class="btn btn-success ml-2" type="submit">Save</button>
+    </form>
+    <a class="btn btn-info ml-2 m-2" href="{% url 'book_list' %}">Cancel</a>
+
+{% endblock %}

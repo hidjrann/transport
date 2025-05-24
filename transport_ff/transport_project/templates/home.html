@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Home
+{% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+   <div class="row">
+        <div class="col-md-3">
+        {% include 'side_bar.html' %}
+        </div>
+        <div class="col-md-9">
+           <p class="text-center"> Hello {{ user.username }}</p>
+        </div>
+   </div>
+{% else %}
+    <p>You are not Logged in</p>
+    <a href="{% url 'login' %}">Login</a>|
+    <a href="{% url 'signup' %}">Signup
+
+{% endif %}
+{% endblock %}

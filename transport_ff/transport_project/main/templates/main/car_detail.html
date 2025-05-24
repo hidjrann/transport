@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="text text-center">
+    <h2>{{ object.name }}</h2>
+    <img style="width:520px; height:430px;" src="{{ object.image.url }}" alt="No image">
+    <p>Description: {{ object.description }} </p>
+    <p>Rent Cost: {{ object.daily_rent }}/Day</p>
+    <a href="{% url 'book_new' %}" class="btn btn-success">Booking</a>
+</div>
+<p>Back to <a href="{% url 'car_list' %}">All Car</a>.</p>
+{% endblock content %}

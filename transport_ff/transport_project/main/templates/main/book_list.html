@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}
+Booking List
+{% endblock %}
+{% block content %}
+    <h2 class="text-center">Booking List</h2>
+    <a href="{% url 'book_new' %}" class="btn btn-success ml-2 mb-4">New Booking</a>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Car</th>
+      <th scope="col">Start Date</th>
+      <th scope="col">End Date</th>
+      <th scope="col">Daily Rent</th>
+      <th scope="col">Total Days</th>
+      <th scope="col">Total Cost</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for book in object_list %}
+    <tr>
+      <td>{{ book.customer_name }}</td>
+      <td>{{ book.car }}</td>
+      <td>{{ book.booking_start_date }}</td>
+      <td>{{ book.booking_end_date }}</td>
+      <td>{{ book.car.daily_rent }}manat</td>
+      <td>{{ book.date_def }}</td>
+      <td>{{ book.cost }}manat</td>
+      <td>
+          <a href="{% url 'book_delete' book.pk %}" class="btn btn-info m-1">Delete</a>
+          <a href="{% url 'book_edit' book.pk %}" class="btn btn-info m-1">Update</a>
+          <a href="#" class="btn btn-info m-1">Pdf</a>
+      </td>
+
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
